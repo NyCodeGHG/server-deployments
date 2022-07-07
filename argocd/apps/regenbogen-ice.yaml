@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: regenbogen-ice
+  namespace: argocd
+spec:
+  destination:
+    namespace: regenbogen-ice
+  project: default
+  source:
+    directory:
+      recurse: true
+    path: regenbogen-ice
+    repoURL: https://github.com/NyCodeGHG/server-deployments
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:  {}
