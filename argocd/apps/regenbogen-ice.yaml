@@ -6,6 +6,7 @@ metadata:
 spec:
   destination:
     namespace: regenbogen-ice
+    server: https://kubernetes.default.svc
   project: default
   source:
     directory:
