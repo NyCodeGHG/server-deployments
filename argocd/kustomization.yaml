@@ -5,6 +5,10 @@ resources:
   - argocd-secret.yaml
   - argocd-route.yaml
   - argocd-extra-secret.yaml
+  - argocd-repo.yaml
+  - ns.yaml
+  - apps/regenbogen-ice.yaml
+  - apps/argocd.yaml
 patchesStrategicMerge:
   - argocd-cmd-params-cm-patch.yaml
   - argocd-config.yaml
