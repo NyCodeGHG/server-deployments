@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: argocd
+  name: argocd-cm
+data:
+  url: https://argocd.nycode.dev
+  admin.enabled: "false"
+  # language=yaml
+  oidc.config: |
+    name: authentik
+    issuer: https://sso.nycode.dev/application/o/argocd/
+    clientID: cfc9997e2872ab68a0c499c98b8f88e1da5c4d28
+    clientSecret: $argocd-extra-secret:clientSecret
+    logoutURL: https://sso.nycode.dev/if/session-end/argocd/
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/name: argocd-rbac-cm
+    app.kubernetes.io/part-of: argocd
+  name: argocd-rbac-cm
+data:
+  # filetype=csv
+  policy.csv: |
+    g, argocd-admin, role:admin
