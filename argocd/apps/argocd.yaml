@@ -12,3 +12,7 @@ spec:
     path: argocd
     repoURL: https://github.com/NyCodeGHG/server-deployments
     targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:  {}
