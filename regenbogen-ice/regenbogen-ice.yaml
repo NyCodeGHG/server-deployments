@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: regenbogen-ice
-          image: "ghcr.io/mikbot/regenbogen-ice:0.1.0"
+          image: "ghcr.io/mikbot/regenbogen-ice:0.2.0"
           imagePullPolicy: IfNotPresent
           resources:
             limits:
