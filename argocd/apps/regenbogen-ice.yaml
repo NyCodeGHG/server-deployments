@@ -9,8 +9,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    directory:
-      recurse: true
     path: regenbogen-ice
     repoURL: https://github.com/NyCodeGHG/server-deployments
     targetRevision: HEAD
