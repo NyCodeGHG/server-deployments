@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-commenter
+  namespace: argocd
+spec:
+  destination:
+    namespace: argocd-commenter-system
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: argocd-commenter
+    repoURL: https://github.com/NyCodeGHG/server-deployments
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:  {}

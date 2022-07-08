@@ -5,7 +5,9 @@
   ],
   "kubernetes": {
     "fileMatch": [
-      "^regenbogen-ice/"
+      "^regenbogen-ice/",
+      "^argocd/",
+      "^argocd-commenter/"
     ]
   }
 }
