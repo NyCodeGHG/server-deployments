@@ -5,3 +5,7 @@ resources:
 bot:
   existingSecret: "regenbogen-ice-secret"
   existingSecretKey: "token"
+  sentry:
+    enabled: true
+    existingSecret: "regenbogen-ice-secret"
+    existingSecretKey: "sentry_dsn"
