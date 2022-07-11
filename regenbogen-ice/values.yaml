@@ -1,7 +1,10 @@
 resources:
+  requests:
+    cpu: "0.5"
+    memory: "512Mi"
   limits:
-    memory: "128Mi"
-    cpu: "250m"
+    cpu: "2"
+    memory: "1024Mi"
 bot:
   existingSecret: "regenbogen-ice-secret"
   existingSecretKey: "token"
