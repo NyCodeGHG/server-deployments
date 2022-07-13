@@ -1,6 +1,6 @@
-ports:
-  web:
-    redirectTo: websecure
+#ports:
+#  web:
+#    redirectTo: websecure
 service:
   spec:
     externalTrafficPolicy: Local
