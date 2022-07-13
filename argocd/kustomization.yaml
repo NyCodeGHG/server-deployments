@@ -6,9 +6,7 @@ resources:
   - argocd-extra-secret.yaml
   - argocd-repo.yaml
   - ns.yaml
-  - apps/regenbogen-ice.yaml
-  - apps/argocd.yaml
-  - apps/argocd-commenter.yaml
+  - apps
 patchesStrategicMerge:
   - argocd-cmd-params-cm-patch.yaml
   - argocd-config.yaml
