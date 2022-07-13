@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: kube-system
 resources:
   - traefik-cert.yaml
+  - traefik-dashboard.yaml
 helmCharts:
   - name: traefik
     releaseName: traefik
