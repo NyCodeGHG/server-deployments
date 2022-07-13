@@ -10,7 +10,4 @@ providers:
   kubernetesCRD:
     allowCrossNamespace: true
     allowExternalNameServices: true
-# Disable default IngressRoute
-ingressRoute:
-  dashboard:
-    enabled: false
+    allowEmptyServices: true

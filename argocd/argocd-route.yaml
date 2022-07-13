@@ -18,9 +18,3 @@ spec:
         - name: argocd-server
           port: 80
           scheme: h2c
-  entryPoints:
-    - websecure
-  tls:
-    store:
-      name: default
-      namespace: kube-system

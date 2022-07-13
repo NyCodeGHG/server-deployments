@@ -2,7 +2,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: TLSStore
 metadata:
   name: default
-  namespace: kube-system
+  namespace: default
 spec:
   defaultCertificate:
     secretName: cert-key-nycode-dev
