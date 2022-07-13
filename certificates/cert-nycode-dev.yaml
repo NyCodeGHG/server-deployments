@@ -2,7 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: nycode-dev
-  namespace: kube-system
+  namespace: default
 spec:
   secretName: cert-key-nycode-dev
   issuerRef:
