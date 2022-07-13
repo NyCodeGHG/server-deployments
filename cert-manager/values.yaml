@@ -2,5 +2,4 @@ prometheus:
   enabled: false
 installCRDs: true
 rbac:
-  create: true
-
+  create: false
