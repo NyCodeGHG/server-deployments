@@ -9,5 +9,5 @@ helmCharts:
     version: 10.24.0
     repo: https://helm.traefik.io/traefik
     namespace: kube-system
-    valuesFile: values.yaml
     includeCRDs: true
+    valuesFile: values.yaml
