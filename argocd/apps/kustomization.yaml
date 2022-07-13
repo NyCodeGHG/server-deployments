@@ -5,4 +5,4 @@ resources:
   - "argocd.yaml"
   - "argocd-commenter.yaml"
   - "regenbogen-ice.yaml"
-  - "cert-manager.yaml"
+#  - "cert-manager.yaml"
