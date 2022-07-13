@@ -1,0 +1,16 @@
+ports:
+  web:
+    redirectTo: websecure
+  service:
+    spec:
+      externalTrafficPolicy: Local
+  providers:
+    kubernetesIngress:
+      allowExternalNameServices: true
+    kubernetesCRD:
+      allowCrossNamespace: true
+      allowExternalNameServices: true
+# Disable default IngressRoute
+ingressRoute:
+  dashboard:
+    enabled: false
