@@ -6,3 +6,4 @@ resources:
   - "argocd-commenter.yaml"
   - "regenbogen-ice.yaml"
   - "cert-manager.yaml"
+  - "kubernetes-dashboard.yaml"
