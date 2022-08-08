@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hafas-graphql
+  namespace: hafas-graphql
+  labels:
+    app: hafas-graphql
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: hafas-graphql
+      labels:
+        app: hafas-graphql
+    spec:
+      containers:
+        - name: hafas-graphql
+          image: ghcr.io/nycodeghg/hafas-projects/hafas-graphql:nightly@sha256:fae5c72e04f74a7ecf89a50552463bef42ad3ddd12b8498ff8f9b187b82dac58
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: hafas-graphql

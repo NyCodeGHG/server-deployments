@@ -1,0 +1,29 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: hafas-graphql
+  namespace: hafas-graphql
+spec:
+  routes:
+    - kind: Rule
+      match: Host(`hafas-graphql-nightly.nycode.dev`) && Method(`POST`)
+      services:
+        - name: hafas-graphql
+          port: 8069
+      middlewares:
+        - name: hafas-graphql-ratelimit
+    - kind: Rule
+      match: Host(`hafas-graphql-nightly.nycode.dev`) && Method(`GET`)
+      services:
+        - name: hafas-graphql
+          port: 8069
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: hafas-graphql-ratelimit
+  namespace: hafas-graphql
+spec:
+  rateLimit:
+    average: 60
+    period: "1m"
