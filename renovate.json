@@ -5,9 +5,15 @@
   ],
   "kubernetes": {
     "fileMatch": [
-      "^regenbogen-ice/",
-      "^argocd/",
-      "^argocd-commenter/"
+      "^argocd-commenter/",
+      "^hafas-graphql/",
+      "^imagepullsecret-patcher/",
     ]
-  }
+  },
+  "packageRules": [
+    {
+      "matchPackageNames": ["ghcr.io/nycodeghg/hafas-projects/hafas-graphql"],
+      "automerge": true
+    }
+  ]
 }
