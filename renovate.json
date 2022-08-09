@@ -17,5 +17,14 @@
       ],
       "automerge": true
     }
+  ],
+  "hostRules": [
+    {
+      "matchHost": "ghcr.io",
+      "username": "nycodeghg",
+      "encrypted": {
+        "password": "wcFMA/xDdHCJBTolAQ/8CPIiv1fwAUTIhk0y+BSAnwIpC25v3ipjaH3lMnj3n8TEN18NSzdZs6AjIGOYu5G8Vq6nkyzbph7qtgRk0IO2PnXiUbWG9P6YIseCVC1zxwIE4DjCNNg2Scb0vVgrNUs9wQOoY4Bvy1/3X1J25fDkcjCFe36wrP1X1lS9PbQZ4lPW8qlgCHoVRD0tzw8eeExGG5l5ihauw+2PTBcSK7eX2PTF2wbTGHPzT6MZtZm9B0POhj89jQB+STw6Vzwb94mbB+LEspIW3vhOJHUwctZ2AKeXsTxGfS+UBGQsDL8uDmqMD5x7QDjDx53sMQ7RVwltrRjZ676E8+eOvFG32pA7zmHtx3wfo93SHrxv0WHs619xupdp+sjhos4zl+xicqOm3AsY97p6A0///POqNZqPRYkS/1r6mdmHMOPNbPTt8vbSbEvRm35LwVUEsDqBLKDgqQ7nmBucdZRC/DPbXTARTU4MeW9v4ISi+fnxocUZ29pjImj0QrCjQTfIA1Y3fIsOgcrQiAM9PCGZT7YwfcYH4MYFBRaaEf0oIoqpYsUzGza/WSdqr8+y5I2a4/Pg0MstwtAAJuXHMZZ9uqYfasWYkyvYY8wotq5xrvmsejBV+i5hotBLWN1Rq0hmygCfmsysnmO6JsybnIUf5m3Dl/E0uGt7WQc3UmW1JZFyJJ+YT+XSigHQR8rW+RcmfBGUK9SdDZ6IVT0iiu36Qh6qCCskNNzcMYIlE9JR99gwrLZWa0ovjbTg4Amf6KjjG8mKqI4/B1eO/UpYWmudLL0Q3i263LLQK0HllQMGk9qoH5Uty1/p0ekaCwOMF3My1lOCNZitoKRkemdteBsAUxy1ipz7MiT8xhSrZCf1rrsD+A"
+      }
+    }
   ]
 }
