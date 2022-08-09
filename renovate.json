@@ -7,7 +7,6 @@
   ],
   "kubernetes": {
     "fileMatch": [
-      "^argocd-commenter/",
       "^hafas-graphql/",
       "^imagepullsecret-patcher/",
       "^whoami/"
