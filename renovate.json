@@ -16,15 +16,5 @@
       ],
       "automerge": true
     }
-  ],
-  "regexManagers": [
-    {
-      "description": "Update hafas-graphql nightly build",
-      "fileMatch": "^hafas-graphql/deployment.yaml$",
-      "matchStrings": [
-        "image: (?<depName>[^:]*):(?<currentValue>.*)"
-      ],
-      "datasourceTemplate": "docker"
-    }
   ]
 }
