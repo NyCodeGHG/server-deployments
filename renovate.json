@@ -15,8 +15,17 @@
       "matchPackageNames": [
         "ghcr.io/nycodeghg/hafas-projects/hafas-graphql"
       ],
-      "versioning": "regex:^(?<compatibility>.*)?@sha256:(?<build>[0-9a-f]+)$",
       "automerge": true
+    }
+  ],
+  "regexManagers": [
+    {
+      "description": "Update hafas-graphql nightly build",
+      "fileMatch": "^hafas-graphql/deployment.yaml$",
+      "matchStrings": [
+        "(?<depName>[^:]*):(?<currentValue>.*)"
+      ],
+      "datasourceTemplate": "docker"
     }
   ]
 }
