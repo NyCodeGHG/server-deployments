@@ -19,7 +19,7 @@ spec:
       serviceAccountName: imagepullsecret-patcher
       containers:
         - name: imagepullsecret-patcher
-          image: "quay.io/titansoft/imagepullsecret-patcher:v0.14"
+          image: "quay.io/titansoft/imagepullsecret-patcher:v0.14@sha256:21e6d6a155dc75a7d40a1ab280329b186226169c20da589c717619945f297070"
           env:
             - name: CONFIG_DOCKERCONFIGJSONPATH
               value: "/app/secrets/.dockerconfigjson"
