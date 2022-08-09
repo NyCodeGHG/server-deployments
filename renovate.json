@@ -8,7 +8,8 @@
     "fileMatch": [
       "^argocd-commenter/",
       "^hafas-graphql/",
-      "^imagepullsecret-patcher/"
+      "^imagepullsecret-patcher/",
+      "^whoami/"
     ]
   },
   "packageRules": [

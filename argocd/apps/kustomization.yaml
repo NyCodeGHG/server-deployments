@@ -9,3 +9,4 @@ resources:
   - "kubernetes-dashboard.yaml"
   - "hafas-graphql.yaml"
   - "imagepullsecret-patcher.yaml"
+  - "whoami.yaml"
