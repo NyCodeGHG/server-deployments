@@ -16,7 +16,9 @@
       "matchPackageNames": [
         "ghcr.io/nycodeghg/hafas-projects/hafas-graphql"
       ],
-      "automerge": true
+      "automerge": true,
+      "automergeType": "branch",
+      "ignoreTests": true
     }
   ],
   "hostRules": [
