@@ -7,12 +7,15 @@
     "fileMatch": [
       "^argocd-commenter/",
       "^hafas-graphql/",
-      "^imagepullsecret-patcher/",
+      "^imagepullsecret-patcher/"
     ]
   },
   "packageRules": [
     {
-      "matchPackageNames": ["ghcr.io/nycodeghg/hafas-projects/hafas-graphql"],
+      "matchPackageNames": [
+        "ghcr.io/nycodeghg/hafas-projects/hafas-graphql"
+      ],
+      "versioning": "regex:^(?<compatibility>.*)?@sha256:(?<build>[0-9a-f]+)$",
       "automerge": true
     }
   ]
