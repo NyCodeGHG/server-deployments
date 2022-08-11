@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: hafas-graphql
-          image: ghcr.io/nycodeghg/hafas-projects/hafas-graphql:0.1.0-nightly@sha256:af4e657324ac6689f02238c7eda50429a45abe43a87e5070efa29e724acf456f
+          image: ghcr.io/nycodeghg/hafas-projects/hafas-graphql:0.1.0-nightly@sha256:e7b0b997d0435fb0197fd60b90877ae411c791dc785ac033b99e3556037b81e0
           imagePullPolicy: IfNotPresent
       restartPolicy: Always
   selector:
