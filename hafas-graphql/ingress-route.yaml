@@ -15,6 +15,12 @@ spec:
         - name: hafas-graphql-ratelimit
     - kind: Rule
       priority: 11
+      match: Host(`hafas-graphql-nightly.nycode.dev`) && Method(`OPTIONS`)
+      services:
+        - name: hafas-graphql
+          port: 8069
+    - kind: Rule
+      priority: 11
       match: Host(`hafas-graphql-nightly.nycode.dev`) && Method(`GET`)
       services:
         - name: hafas-graphql
