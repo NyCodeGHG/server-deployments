@@ -25,5 +25,5 @@ spec:
     replacement: https://hafas-graphql-cf.nycode.dev/${1}
   headers:
     accessControlAllowOriginList:
-      - *
+      - "*"
     accessControlMaxAge: 3600
