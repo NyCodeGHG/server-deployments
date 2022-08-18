@@ -19,4 +19,4 @@ spec:
   redirectRegex:
     permanent: false
     regex: ^https://hafas-graphql-nightly\\.nycode\\.dev/(.*)
-    replacement: https://hafas-graphql-cf.nycode.dev/$${1}
+    replacement: https://hafas-graphql-cf.nycode.dev/${1}
