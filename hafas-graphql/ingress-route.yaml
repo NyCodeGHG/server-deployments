@@ -34,4 +34,8 @@ spec:
   headers:
     accessControlAllowOriginList:
       - "*"
+    accessControlAllowHeaders:
+      - "*"
+    accessControlAllowMethods:
+      - "*"
     accessControlMaxAge: 3600
