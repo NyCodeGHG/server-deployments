@@ -8,7 +8,7 @@ spec:
     - kind: Rule
       match: Host(`hafas-graphql-nightly.nycode.dev`)
       middlewares:
-        - name: hafas-graphql-redirect
+        - name: hafas-graphql
       services:
         - name: noop@internal
           kind: TraefikService
@@ -16,10 +16,14 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
-  name: hafas-graphql-redirect
+  name: hafas-graphql
   namespace: hafas-graphql
 spec:
   redirectRegex:
     permanent: false
     regex: ^https://hafas-graphql-nightly\.nycode\.dev/(.*)
     replacement: https://hafas-graphql-cf.nycode.dev/${1}
+  headers:
+    accessControlAllowOriginList:
+      - *
+    accessControlMaxAge: 3600
