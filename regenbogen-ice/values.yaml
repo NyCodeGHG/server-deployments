@@ -9,6 +9,6 @@ bot:
   existingSecret: "regenbogen-ice-secret"
   existingSecretKey: "token"
   sentry:
-    enabled: false
+    enabled: true
     existingSecret: "regenbogen-ice-secret"
     existingSecretKey: "sentry_dsn"
