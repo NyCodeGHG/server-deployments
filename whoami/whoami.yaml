@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: whoami
-          image: traefik/whoami@sha256:8932271344cf4da580c43c41dbf56a49cb15b250fe60e5dc43530f217eff0daf
+          image: traefik/whoami@sha256:3c0ceff8336a18795362b749555b01331edae9c27ae5f4e12b8042b21ce008e3
           ports:
             - containerPort: 80
 ---
