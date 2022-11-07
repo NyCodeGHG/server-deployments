@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - https://github.com/int128/argocd-commenter/releases/download/v1.14.1/argocd-commenter.yaml
+  - https://github.com/int128/argocd-commenter/releases/download/v1.14.4/argocd-commenter.yaml
   - argocd-commenter-secret.yaml
 namespace: argocd-commenter-system
