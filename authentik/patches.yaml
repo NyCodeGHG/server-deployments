@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: authentik-postgresql
+  namespace: authentik
+  labels:
+    app.kubernetes.io/name: postgresql
+spec:
+  serviceName: authentik-postgresql-headless
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: postgresql
+  template:
+    spec:
+      containers:
+        - name: authentik-postgresql
+          env:
+            - name: POSTGRES_POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: postgres-password
+                  name: authentik-secret
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: postgres-password
+                  name: authentik-secret

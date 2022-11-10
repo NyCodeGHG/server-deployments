@@ -1,0 +1,50 @@
+authentik:
+  error_reporting:
+    enabled: false
+  email:
+    use_tls: true
+    port: 465
+ingress:
+  enabled: true
+  hosts:
+    - host: sso.nycode.dev
+      paths:
+        - path: "/"
+          pathType: Prefix
+
+envValueFrom:
+  AUTHENTIK_SECRET_KEY:
+    secretKeyRef:
+      name: authentik-secret
+      key: authentik-secret
+  AUTHENTIK_POSTGRESQL__PASSWORD:
+    secretKeyRef:
+      name: authentik-secret
+      key: postgres-password
+  AUTHENTIK_EMAIL__HOST:
+    secretKeyRef:
+      name: authentik-secret
+      key: email-host
+  AUTHENTIK_EMAIL__FROM:
+    secretKeyRef:
+      name: authentik-secret
+      key: email-from
+  AUTHENTIK_EMAIL__USERNAME:
+    secretKeyRef:
+      name: authentik-secret
+      key: email-username
+  AUTHENTIK_EMAIL__PASSWORD:
+    secretKeyRef:
+      name: authentik-secret
+      key: email-password
+
+postgresql:
+  enabled: true
+  auth:
+    existingSecret: authentik-secret
+    secretKeys:
+      adminPasswordKey: postgres-password
+      userPasswordKey: postgres-password
+
+redis:
+  enabled: true
