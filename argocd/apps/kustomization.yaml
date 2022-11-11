@@ -6,7 +6,6 @@ resources:
   - "argocd-commenter.yaml"
   - "regenbogen-ice.yaml"
   - "cert-manager.yaml"
-  - "kubernetes-dashboard.yaml"
   - "hafas-graphql.yaml"
   - "imagepullsecret-patcher.yaml"
   - "whoami.yaml"
