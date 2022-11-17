@@ -9,3 +9,4 @@ resources:
   - "hafas-graphql.yaml"
   - "imagepullsecret-patcher.yaml"
   - "whoami.yaml"
+  - "grafana.yaml"

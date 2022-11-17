@@ -1,0 +1,29 @@
+ingress:
+  enabled: true
+  hosts:
+    - "grafana.nycode.dev"
+#persistence:
+#  enabled: true
+smtp:
+  existingSecret: smtp-secret
+grafana.ini:
+  smtp:
+    from_address: noreply@nycode.de
+    from_name: Grafana
+  server:
+    root_url: https://grafana.nycode.dev
+  security:
+    disable_initial_admin_creation: true
+
+envFromSecret: grafana-env
+
+env:
+  GF_AUTH_GENERIC_OAUTH_ENABLED: "true"
+  GF_AUTH_GENERIC_OAUTH_NAME: Authentik
+  GF_AUTH_GENERIC_OAUTH_SCOPES: openid profile email
+  GF_AUTH_SIGNOUT_REDIRECT_URL: https://sso.nycode.dev/if/session-end/grafana/
+  GF_AUTH_GENERIC_OAUTH_AUTH_URL: https://sso.nycode.dev/application/o/authorize/
+  GF_AUTH_GENERIC_OAUTH_TOKEN_URL: https://sso.nycode.dev/application/o/token/
+  GF_AUTH_GENERIC_OAUTH_API_URL: https://sso.nycode.dev/application/o/userinfo/
+  GF_AUTH_OAUTH_AUTO_LOGIN: "true"
+  GF_AUTH_GENERIC_OAUTH_ROLE_ATTRIBUTE_PATH: "contains(groups[*], 'grafana-admin') && 'Admin' || contains(groups[*], 'grafana-edit') && 'Editor' || 'Viewer'"
