@@ -10,6 +10,9 @@ spec:
     ports:
       web:
         redirectTo: websecure
+      metrics:
+        prometheus:
+          addServicesLabels: true
     service:
       spec:
         externalTrafficPolicy: Local

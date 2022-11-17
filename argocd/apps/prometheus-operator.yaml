@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus-operator
+  namespace: argocd
+spec:
+  destination:
+    namespace: prometheus-operator
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: prometheus/operator
+    repoURL: https://github.com/NyCodeGHG/server-deployments
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

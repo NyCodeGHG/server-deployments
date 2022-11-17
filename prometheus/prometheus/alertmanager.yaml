@@ -1,0 +1,31 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: config-alertmanager
+  namespace: prometheus
+  labels:
+    alertmanagerConfig: default-config
+spec:
+  route:
+    groupBy: []
+    groupWait: 15s
+    groupInterval: 15s
+    repeatInterval: 15s
+    receiver: "discord"
+  receivers:
+    - name: "discord"
+      webhookConfigs:
+        - sendResolved: true
+          url: "http://alertmanager-discord:9094"
+---
+apiVersion: monitoring.coreos.com/v1
+kind: Alertmanager
+metadata:
+  name: alertmanager
+  namespace: prometheus
+spec:
+  replicas: 1
+  alertmanagerConfigSelector:
+    matchLabels:
+      alertmanagerConfig: default-config
+  externalUrl: https://alertmanager.nycode.dev

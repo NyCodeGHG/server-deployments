@@ -10,3 +10,5 @@ resources:
   - "imagepullsecret-patcher.yaml"
   - "whoami.yaml"
   - "grafana.yaml"
+  - "prometheus-operator.yaml"
+  - "prometheus.yaml"
