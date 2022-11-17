@@ -6,6 +6,8 @@ ingress:
 #  enabled: true
 smtp:
   existingSecret: smtp-secret
+serviceMonitor:
+  enabled: true
 grafana.ini:
   smtp:
     from_address: noreply@nycode.de
