@@ -48,3 +48,9 @@ postgresql:
 
 redis:
   enabled: true
+
+prometheus:
+  serviceMonitor:
+    create: true
+  rules:
+    create: true
