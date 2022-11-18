@@ -4,7 +4,7 @@ namespace: argocd
 resources:
   - "argocd.yaml"
   - "argocd-commenter.yaml"
-#  - "regenbogen-ice.yaml"
+  - "regenbogen-ice.yaml"
   - "cert-manager.yaml"
   - "hafas-graphql.yaml"
   - "imagepullsecret-patcher.yaml"
