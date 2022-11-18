@@ -2,8 +2,8 @@ ingress:
   enabled: true
   hosts:
     - "grafana.nycode.dev"
-#persistence:
-#  enabled: true
+persistence:
+  enabled: true
 smtp:
   existingSecret: smtp-secret
 serviceMonitor:
