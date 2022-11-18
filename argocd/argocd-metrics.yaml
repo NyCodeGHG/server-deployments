@@ -1,0 +1,23 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: argocd-metrics
+  namespace: argocd
+spec:
+  endpoints:
+    - targetPort: 8082
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: argocd-metrics
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: argocd-server-metrics
+  namespace: argocd
+spec:
+  endpoints:
+    - targetPort: 8083
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: argocd-server-metrics

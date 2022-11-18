@@ -7,6 +7,7 @@ resources:
   - argocd-repo.yaml
   - ns.yaml
   - apps
+  - argocd-metrics.yaml
 patchesStrategicMerge:
   - argocd-cmd-params-cm-patch.yaml
   - argocd-config.yaml
