@@ -37,4 +37,4 @@ spec:
       volumes:
         - name: src-dockerconfigjson
           secret:
-            secretName: regcred
+            secretName: regcrd
