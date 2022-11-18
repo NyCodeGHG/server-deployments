@@ -4,6 +4,7 @@ namespace: argocd
 resources:
   - "argocd.yaml"
   - "argocd-commenter.yaml"
+  - "authentik.yaml"
   - "regenbogen-ice.yaml"
   - "cert-manager.yaml"
   - "hafas-graphql.yaml"
