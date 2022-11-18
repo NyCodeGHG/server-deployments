@@ -13,3 +13,4 @@ resources:
   - "grafana.yaml"
   - "prometheus-operator.yaml"
   - "prometheus.yaml"
+  - "genius-service.yaml"
