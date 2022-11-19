@@ -8,9 +8,7 @@ resources:
   - ns.yaml
   - apps
   - argocd-metrics.yaml
-  - argocd-secret.yaml
 patchesStrategicMerge:
   - argocd-cmd-params-cm-patch.yaml
   - argocd-config.yaml
-  - argocd-delete-secret.yaml
 namespace: argocd
