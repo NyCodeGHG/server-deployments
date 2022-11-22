@@ -77,7 +77,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   namespace: lyrics-bio
-  generateName: migrations-
+  name: migrations
   annotations:
     argocd.argoproj.io/hook: PreSync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
