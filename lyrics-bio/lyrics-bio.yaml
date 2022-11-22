@@ -1,0 +1,126 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: lyrics-bio
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lyrics-bio
+  namespace: lyrics-bio
+  labels:
+    app.kubernetes.io/name: lyrics-bio
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: lyrics-bio
+      labels:
+        app.kubernetes.io/name: lyrics-bio
+    spec:
+      containers:
+        - name: lyrics-bio
+          image: ghcr.io/nycodeghg/lyrics-bio/web:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+              name: http
+          envFrom:
+            - secretRef:
+                name: lyrics-bio
+          env:
+            - name: VERCEL
+              value: "1" # Emulate Vercel Deployment for NextAuth.js
+            - name: VERCEL_URL
+              value: lyrics-bio.marie.cologne
+            - name: DATABASE_USER
+              value: lyrics-bio
+            - name: DATABASE
+              value: lyrics-bio
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mariadb-secret
+                  key: mariadb-password
+            - name: DATABASE_HOST
+              value: mariadb
+            - name: DATABASE_URL
+              value: "mysql://$(DATABASE_USER):$(DATABASE_PASSWORD)@$(DATABASE_HOST)/$(DATABASE)"
+            - name: GENIUS_SERVICE_URL
+              value: "http://genius-service.genius-service.svc.cluster.local:8080/song"
+          readinessProbe:
+            httpGet:
+              port: http
+              path: /
+          livenessProbe:
+            httpGet:
+              port: http
+              path: /
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: lyrics-bio
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lyrics-bio
+  namespace: lyrics-bio
+spec:
+  ports:
+    - name: http
+      port: 3000
+  selector:
+    app.kubernetes.io/name: lyrics-bio
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  namespace: lyrics-bio
+  generateName: migrations-
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  backoffLimit: 2
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: lyrics-bio
+          image: ghcr.io/nycodeghg/lyrics-bio/web:latest
+          imagePullPolicy: Always
+          command: ["npx"]
+          args: ["prisma", "migrate", "deploy"]
+          env:
+            - name: DATABASE_USER
+              value: "lyrics-bio"
+            - name: DATABASE
+              value: "lyrics-bio"
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mariadb-secret
+                  key: mariadb-password
+            - name: DATABASE_HOST
+              value: mariadb
+            - name: DATABASE_URL
+              value: mysql://$(DATABASE_USER):$(DATABASE_PASSWORD)@$(DATABASE_HOST)/$(DATABASE)
+---
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: lyrics-bio
+  namespace: lyrics-bio
+kind: Ingress
+spec:
+  rules:
+    - host: lyrics-bio.marie.cologne
+      http:
+        paths:
+          - backend:
+              service:
+                name: lyrics-bio
+                port:
+                  name: http
+            path: /
+            pathType: Prefix

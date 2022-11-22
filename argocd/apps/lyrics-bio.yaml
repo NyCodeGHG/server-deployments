@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: lyrics-bio
+  namespace: argocd
+spec:
+  destination:
+    namespace: lyrics-bio
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: lyrics-bio
+    repoURL: https://github.com/NyCodeGHG/server-deployments
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:  {}

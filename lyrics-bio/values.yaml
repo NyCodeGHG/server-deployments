@@ -1,0 +1,4 @@
+auth:
+  existingSecret: mariadb-secret
+  database: lyrics-bio
+  username: lyrics-bio
