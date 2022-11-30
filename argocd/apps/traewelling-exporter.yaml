@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: traewelling-exporter
+  namespace: argocd
+spec:
+  destination:
+    namespace: traewelling-exporter
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: traewelling-exporter
+    repoURL: https://github.com/NyCodeGHG/server-deployments
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:  {}
