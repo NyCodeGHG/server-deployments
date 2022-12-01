@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: traewelling-exporter
-          image: ghcr.io/nycodeghg/traewelling-exporter/exporter:0.2.0
+          image: ghcr.io/nycodeghg/traewelling-exporter/exporter:0.2.1
           ports:
             - containerPort: 3000
               name: metrics
@@ -29,9 +29,6 @@ spec:
           envFrom:
             - secretRef:
                 name: traewelling-exporter
-          env:
-            - name: OTEL_SERVICE_NAME
-              value: traewelling-exporter
           livenessProbe:
             httpGet:
               port: metrics
