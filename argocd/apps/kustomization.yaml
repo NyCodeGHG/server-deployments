@@ -15,5 +15,4 @@ resources:
   - "prometheus.yaml"
   - "genius-service.yaml"
   - "argo-tunnel.yaml"
-  - "lyrics-bio.yaml"
   - "traewelling-exporter.yaml"
