@@ -1,0 +1,22 @@
+ingressRoute:
+  enabled: true
+  host: "miniflux.nycode.dev"
+
+baseUrl: "https://miniflux.nycode.dev"
+
+auth:
+  createAdmin: true
+  existingSecret: "admin-user"
+  oauth2:
+    enabled: true
+    enableUserCreation: true
+    provider: "oidc"
+    redirectUrl: "https://miniflux.nycode.dev/oauth2/oidc/callback"
+    discoveryEndpoint: "https://sso.nycode.dev/application/o/miniflux/"
+    existingSecret: "oauth2"
+
+metrics:
+  prometheus:
+    enabled: true
+    serviceMonitor:
+      enabled: true

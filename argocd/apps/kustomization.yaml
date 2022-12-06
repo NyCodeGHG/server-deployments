@@ -16,3 +16,4 @@ resources:
   - "genius-service.yaml"
   - "argo-tunnel.yaml"
   - "traewelling-exporter.yaml"
+  - "miniflux.yaml"
