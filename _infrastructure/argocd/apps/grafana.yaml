@@ -9,10 +9,10 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: grafana
+    path: _infrastructure/grafana
     repoURL: https://github.com/NyCodeGHG/server-deployments
     targetRevision: HEAD
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
-    automated:  {}
+    automated: {}
