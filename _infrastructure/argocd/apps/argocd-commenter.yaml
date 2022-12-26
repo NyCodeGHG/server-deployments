@@ -7,12 +7,12 @@ spec:
   destination:
     namespace: argocd-commenter-system
     server: https://kubernetes.default.svc
-  project: default
+  project: infra
   source:
-    path: argocd-commenter
+    path: _infrastructure/argocd-commenter
     repoURL: https://github.com/NyCodeGHG/server-deployments
     targetRevision: HEAD
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
-    automated:  {}
+    automated: {}
