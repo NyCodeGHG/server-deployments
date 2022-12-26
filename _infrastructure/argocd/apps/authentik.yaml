@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: infra
   source:
-    path: authentik
+    path: _infrastructure/authentik
     repoURL: https://github.com/NyCodeGHG/server-deployments
     targetRevision: HEAD
   syncPolicy:
