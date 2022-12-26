@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: prometheus
+  name: argo-tunnel
   namespace: argocd
 spec:
   destination:
-    namespace: prometheus
+    namespace: argo-tunnel
     server: https://kubernetes.default.svc
-  project: default
+  project: infra
   source:
-    path: prometheus/prometheus
+    path: _infrastructure/argo-tunnel
     repoURL: https://github.com/NyCodeGHG/server-deployments
     targetRevision: HEAD
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
-    automated:  {}
+    automated: {}

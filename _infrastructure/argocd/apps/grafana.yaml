@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-tunnel
+  name: grafana
   namespace: argocd
 spec:
   destination:
-    namespace: argo-tunnel
+    namespace: grafana
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: argo-tunnel
+    path: _infrastructure/grafana
     repoURL: https://github.com/NyCodeGHG/server-deployments
     targetRevision: HEAD
   syncPolicy:

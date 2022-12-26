@@ -17,3 +17,4 @@ resources:
   - "argo-tunnel.yaml"
   - "traewelling-exporter.yaml"
   - "miniflux.yaml"
+  - "traefik.yaml"
