@@ -7,9 +7,9 @@
   ],
   "kubernetes": {
     "fileMatch": [
-      "^imagepullsecret-patcher/",
       "^whoami/",
-      "^_infrastructure/argo-tunnel"
+      "^_infrastructure/argo-tunnel",
+      "^_infrastructure/imagepullsecret-patcher"
     ]
   }
 }
