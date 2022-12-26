@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: cloudflared
-          image: cloudflare/cloudflared:2022.3.0
+          image: cloudflare/cloudflared:2022.12.1@sha256:c7dead6ee0cbe489e8ce2724a9dd5870f2b1d9d9564beca701c9f68f94709b13
           args:
             - tunnel
             # Points cloudflared to the config file, which configures what
