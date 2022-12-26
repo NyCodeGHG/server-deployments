@@ -10,9 +10,12 @@ spec:
     ports:
       web:
         redirectTo: websecure
-      metrics:
-        prometheus:
-          addServicesLabels: true
+    metrics:
+      prometheus:
+        # only router labels are false by default
+        addEntryPointsLabels: true
+        addRoutersLabels: true
+        addServicesLabels: true
     service:
       spec:
         externalTrafficPolicy: Local
