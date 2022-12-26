@@ -4,3 +4,4 @@ namespace: argocd
 resources:
   - "default.yaml"
   - "infra.yaml"
+  - "monitoring.yaml"

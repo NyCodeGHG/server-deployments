@@ -7,12 +7,12 @@ spec:
   destination:
     namespace: prometheus
     server: https://kubernetes.default.svc
-  project: default
+  project: monitoring
   source:
-    path: prometheus/prometheus
+    path: _infrastructure/prometheus
     repoURL: https://github.com/NyCodeGHG/server-deployments
     targetRevision: HEAD
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
-    automated:  {}
+    automated: {}
