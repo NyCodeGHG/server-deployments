@@ -24,6 +24,8 @@ spec:
             cidr: 0.0.0.0/0
       ports:
         - port: 443
+        - port: 53
+          protocol: UDP
     - to:
         - namespaceSelector: {}
           podSelector:
