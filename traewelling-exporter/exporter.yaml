@@ -19,6 +19,12 @@ spec:
       labels:
         app.kubernetes.io/name: traewelling-exporter
     spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 3000
+        fsGroup: 2000
+      dnsPolicy: Default
       containers:
         - name: traewelling-exporter
           image: ghcr.io/nycodeghg/traewelling-exporter/exporter:0.3.0@sha256:bb7d1353666d2fcf687f02910b150401b02b41232d807300ff92753f64a3784a
@@ -39,6 +45,17 @@ spec:
               port: metrics
               scheme: HTTP
               path: /healthz
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "10Mi"
+            limits:
+              cpu: "100m"
+              memory: "20Mi"
+          securityContext:
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            allowPrivilegeEscalation: false
 ---
 apiVersion: v1
 kind: Service
@@ -55,25 +72,3 @@ spec:
       protocol: TCP
       port: 80
       targetPort: 3000
----
-apiVersion: monitoring.coreos.com/v1
-kind: ServiceMonitor
-metadata:
-  name: traewelling-exporter
-  namespace: traewelling-exporter
-  labels:
-    app.kubernetes.io/name: traewelling-exporter
-spec:
-  endpoints:
-    - honorLabels: true
-      port: metrics
-      path: /metrics
-      scheme: http
-      interval: 30s
-  jobLabel: traewelling-exporter
-  selector:
-    matchLabels:
-      app.kubernetes.io/name: traewelling-exporter
-  namespaceSelector:
-    matchNames:
-      - traewelling-exporter

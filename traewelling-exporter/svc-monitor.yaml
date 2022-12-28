@@ -1,0 +1,21 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: traewelling-exporter
+  namespace: traewelling-exporter
+  labels:
+    app.kubernetes.io/name: traewelling-exporter
+spec:
+  endpoints:
+    - honorLabels: true
+      port: metrics
+      path: /metrics
+      scheme: http
+      interval: 30s
+  jobLabel: traewelling-exporter
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: traewelling-exporter
+  namespaceSelector:
+    matchNames:
+      - traewelling-exporter
