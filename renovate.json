@@ -8,6 +8,7 @@
   "kubernetes": {
     "fileMatch": [
       "^whoami/",
+      "^traewelling-exporter/",
       "^_infrastructure/argo-tunnel",
       "^_infrastructure/imagepullsecret-patcher"
     ]
