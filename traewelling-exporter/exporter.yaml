@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: traewelling-exporter
-          image: ghcr.io/nycodeghg/traewelling-exporter/exporter:0.2.2
+          image: ghcr.io/nycodeghg/traewelling-exporter/exporter:0.3.0@sha256:bb7d1353666d2fcf687f02910b150401b02b41232d807300ff92753f64a3784a
           ports:
             - containerPort: 3000
               name: metrics
