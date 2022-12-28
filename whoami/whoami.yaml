@@ -17,11 +17,25 @@ spec:
       labels:
         app: whoami
     spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 3000
+        fsGroup: 2000
       containers:
         - name: whoami
-          image: traefik/whoami@sha256:24829edb0dbaea072dabd7d902769168542403a8c78a6f743676af431166d7f0
+          image: ghcr.io/nycodeghg/containers/whoami@sha256:bd0077df55bd81e8a7a0ef90f29584f906e80146eafd353b59b77c8720c21f35
           ports:
             - containerPort: 80
+          resources:
+            limits:
+              memory: 50Mi
+              cpu: 100m
+            requests:
+              memory: 10Mi
+              cpu: 50m
+          securityContext:
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
 ---
 apiVersion: v1
 kind: Service
