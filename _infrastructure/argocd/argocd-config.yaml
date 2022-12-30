@@ -16,6 +16,7 @@ data:
     clientSecret: $argocd-extra-secret:clientSecret
     logoutURL: https://sso.nycode.dev/if/session-end/argocd/
   kustomize.buildOptions: --enable-helm
+  application.instanceLabelKey: argocd.argoproj.io/instance
 ---
 apiVersion: v1
 kind: ConfigMap
