@@ -17,3 +17,4 @@ resources:
   - "traewelling-exporter.yaml"
   - "miniflux.yaml"
   - "traefik.yaml"
+  - "longhorn.yaml"

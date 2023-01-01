@@ -1,0 +1,3 @@
+resources:
+  - "https://raw.githubusercontent.com/longhorn/longhorn/v1.4.0/deploy/longhorn.yaml"
+  - "storageclass.yaml"
