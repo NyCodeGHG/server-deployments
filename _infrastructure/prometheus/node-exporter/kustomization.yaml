@@ -4,7 +4,7 @@ namespace: prometheus
 helmCharts:
   - name: prometheus-node-exporter
     releaseName: node-exporter
-    version: 4.8.1
+    version: 4.9.0
     repo: https://prometheus-community.github.io/helm-charts
     namespace: prometheus
     valuesInline:
