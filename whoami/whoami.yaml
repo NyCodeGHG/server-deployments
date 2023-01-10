@@ -24,7 +24,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: whoami
-          image: ghcr.io/nycodeghg/containers/whoami@sha256:bd0077df55bd81e8a7a0ef90f29584f906e80146eafd353b59b77c8720c21f35
+          image: ghcr.io/nycodeghg/containers/whoami@sha256:c7934dd29b03264efa9d4eb34f452ca8df186f5237d94cac1cf9e02158ddf1e8
           ports:
             - containerPort: 80
           resources:
