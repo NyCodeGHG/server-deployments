@@ -4,6 +4,7 @@ resources:
   - ns.yaml
   - cloudflare-secret.yaml
   - cluster-issuer.yaml
+  - certs.yaml
 helmCharts:
   - name: cert-manager
     releaseName: cert-manager
