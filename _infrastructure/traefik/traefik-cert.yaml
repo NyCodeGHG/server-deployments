@@ -6,3 +6,5 @@ metadata:
 spec:
   defaultCertificate:
     secretName: cert-key-nycode-dev
+  certificates:
+    - secretName: cert-key-marie-cologne

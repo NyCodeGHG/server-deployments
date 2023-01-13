@@ -11,3 +11,17 @@ spec:
     name: letsencrypt-production
     kind: ClusterIssuer
   secretName: cert-key-nycode-dev
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: marie-cologne
+  namespace: kube-system
+spec:
+  dnsNames:
+    - marie.cologne
+    - '*.marie.cologne'
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  secretName: cert-key-marie-cologne
