@@ -16,8 +16,6 @@ ingress:
           pathType: Prefix
   apiVersion: networking.k8s.io/v1
 
-replicaCount: 2
-
 gitea:
   admin:
     existingSecret: gitea-admin
