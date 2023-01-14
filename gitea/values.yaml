@@ -52,3 +52,9 @@ gitea:
   additionalConfigSources:
     - secret:
         secretName: gitea-app-ini-mailer
+
+service:
+  ssh:
+    type: LoadBalancer
+    port: 2222
+    externalTrafficPolicy: Local
