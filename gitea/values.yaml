@@ -24,7 +24,7 @@ gitea:
       provider: "openidConnect"
       existingSecret: "gitea-oauth"
       autoDiscoverUrl: "https://sso.nycode.dev/application/o/gitea/.well-known/openid-configuration"
-      skipLocalTwoFA: true
+      skipLocal2fa: true
   metrics:
     enabled: true
     serviceMonitor:
