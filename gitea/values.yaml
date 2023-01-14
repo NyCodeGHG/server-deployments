@@ -1,0 +1,54 @@
+global:
+  storageClass: longhorn
+
+image:
+  registry: "docker.io"
+  repository: "gitea/gitea"
+  tag: "1.18.0"
+  rootless: true
+
+ingress:
+  enabled: true
+  hosts:
+    - host: git.marie.cologne
+      paths:
+        - path: /
+          pathType: Prefix
+  apiVersion: networking.k8s.io/v1
+
+gitea:
+  admin:
+    existingSecret: gitea-admin
+  oauth:
+    - name: "Authentik"
+      provider: "openidConnect"
+      existingSecret: "gitea-oauth"
+      autoDiscoverUrl: "https://sso.nycode.dev/application/o/gitea/.well-known/openid-configuration"
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+  config:
+    server:
+      ROOT_URL: "https://git.marie.cologne"
+      ENABLE_PPROF: true
+    mailer:
+      ENABLED: TRUE
+    service:
+      DISABLE_REGISTRATION: true
+      REGISTER_EMAIL_CONFIRM: true
+      REQUIRE_SIGNIN_VIEW: true
+      DEFAULT_ALLOW_CREATE_ORGANIZATION: false
+    service.explore:
+      REQUIRE_SIGNIN_VIEW: true
+    oauth2_client:
+      REGISTER_EMAIL_CONFIRM: false
+      OPENID_CONNECT_SCOPES: profile email
+      ENABLE_AUTO_REGISTRATION: true
+      UPDATE_AVATAR: true
+      ACCOUNT_LINKING: disabled
+    oauth2:
+      ENABLE: false
+  additionalConfigSources:
+    - secret:
+        secretName: gitea-app-ini-mailer

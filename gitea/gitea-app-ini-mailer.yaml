@@ -1,0 +1,15 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: gitea-app-ini-mailer
+  namespace: gitea
+spec:
+  encryptedData:
+    mailer: AgB+aj295TWHeYJ3jhYCysOpyZPJo+MDP+nAcnKICB4Q1phdXFzsxHERafMlUYuWytLpunoJy7L9wtvUXVWOI92zbZkjCKPYM2fxi5iq/KGkzUyUttSBJhkacqYYocTbmB+r50X+yAuehfkgjbTvofhi3G71+YBzQLsWkgMxAE31zuXG41r8SKEAs/IsZ073u5itGCAhZRcZGgDOinlMhiqzhZ/qgrUt4b/hZTkbxsEiSfcx5v/2272N61/lZOQDyVV1sA+JTIC9ueOWJc2EZzHFFvL0mNV7uB92oGAKRKbPPxi5Ezw7RRK+mvMS5DX6Y+xZvw5bSICay/IJgYCz7obwcdWdq7871+B5/g0cM6ccNnE703svuIlaIPaRyM+ZsySDxgwZIWQ59Kudm5BTG6QuAz5DO9Y1EPUCsKcp5bXGZAQTDV0HR+dWzO78zmKPzyLbLr55i+C14QrlkbCUOr+080aMR5lEbm93h+th7dQ4+Cis0GKAHvXIjr1rOU0F51Ao7DeF/Q4bD076peVNSoHl7rMiINaE2SI6Wu8Y/tCd4mlDm9ddH+jFjZ6sJlc1PNSQWZfrjsV+SXooYCikE7oCVUTTgATroXd0hou04rj1OsFwK2m2im5M5uJXuXgCn2QuoLpkN2KmBEW9mWRSgHJ+HlvtJ0guoVLZk+eXUJ7Ks5WPomLHOFU3c9Kt+OpONXWfTpUzznVqjWZ3R8dwJac6h6v6lPGT3cRnKD79NeHMaOviV0ds0U0lSowttGKxqZal7RdebkXGmSGj9jlx8b5rnzBcrocM1sDcTduBRFXGjsUn3UZ8aNtg7isYYYr+fhlA1p3SMFHylsbJAmohakrcpvMLiB2co7vmCbhwv0JHnG2oIphgq/kr56n2zQ==
+  template:
+    metadata:
+      creationTimestamp: null
+      name: gitea-app-ini-mailer
+      namespace: gitea
+

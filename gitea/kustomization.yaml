@@ -1,0 +1,13 @@
+namespace: gitea
+resources:
+  - gitea-admin.yaml
+  - gitea-oauth.yaml
+  - gitea-app-ini-mailer.yaml
+  - ns.yaml
+helmCharts:
+  - name: gitea
+    releaseName: gitea
+    repo: https://dl.gitea.io/charts/
+    version: 6.0.5
+    namespace: gitea
+    valuesFile: values.yaml
