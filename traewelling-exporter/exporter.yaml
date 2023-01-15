@@ -27,7 +27,7 @@ spec:
       dnsPolicy: Default
       containers:
         - name: traewelling-exporter
-          image: ghcr.io/nycodeghg/traewelling-exporter/exporter:0.3.0@sha256:bb7d1353666d2fcf687f02910b150401b02b41232d807300ff92753f64a3784a
+          image: ghcr.io/nycodeghg/traewelling-exporter/exporter:0.4.0@sha256:e79be170b3224350ab2c076c72ce5c4a4d359c189eb7e1b3f3db27bde418fe12
           ports:
             - containerPort: 3000
               name: metrics
