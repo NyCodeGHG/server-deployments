@@ -1,5 +1,5 @@
 global:
-  storageClass: longhorn
+  storageClass: longhorn-storage
 
 image:
   registry: "docker.io"
