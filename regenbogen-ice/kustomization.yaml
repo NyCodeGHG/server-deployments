@@ -7,7 +7,7 @@ resources:
 helmCharts:
   - name: regenbogen-ice
     releaseName: regenbogen-ice
-    version: 1.14.0
+    version: 1.15.0
     repo: https://mikbot.github.io/charts
     namespace: regenbogen-ice
     valuesFile: values.yaml
