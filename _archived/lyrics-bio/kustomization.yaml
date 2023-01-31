@@ -8,7 +8,7 @@ resources:
 helmCharts:
   - name: mariadb
     releaseName: mariadb
-    version: 11.4.4
+    version: 11.4.5
     repo: https://charts.bitnami.com/bitnami
     namespace: lyrics-bio
     valuesFile: values.yaml
