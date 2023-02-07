@@ -18,4 +18,3 @@ resources:
   - "miniflux.yaml"
   - "traefik.yaml"
   - "longhorn.yaml"
-  - "gitea.yaml"
