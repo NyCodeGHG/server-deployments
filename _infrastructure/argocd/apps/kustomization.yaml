@@ -15,6 +15,7 @@ resources:
   - "genius-service.yaml"
   - "argo-tunnel.yaml"
   - "traewelling-exporter.yaml"
+  - "spotify-exporter.yaml"
   - "miniflux.yaml"
   - "traefik.yaml"
   - "longhorn.yaml"

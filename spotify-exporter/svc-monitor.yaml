@@ -1,0 +1,21 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: spotify-exporter
+  namespace: spotify-exporter
+  labels:
+    app.kubernetes.io/name: spotify-exporter
+spec:
+  endpoints:
+    - honorLabels: true
+      port: metrics
+      path: /metrics
+      scheme: http
+      interval: 5m
+  jobLabel: spotify-exporter
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: spotify-exporter
+  namespaceSelector:
+    matchNames:
+      - spotify-exporter
