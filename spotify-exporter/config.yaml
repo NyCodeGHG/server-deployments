@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: spotify-exporter
+  namespace: spotify-exporter
+  labels:
+    app.kubernetes.io/name: spotify-exporter
+data:
+  config.yaml: |
+    artists:
+      - "06HL4z0CvFAxyc27GXpf02" # Taylor Swift
+      - "00FQb4jTyendYWaN8pK0wa" # Lana Del Rey
+      - "3uwAm6vQy7kWPS2bciKWx9" # girl in red
+      - "2ke2MNKxAZ9y4wUCZEGV4D" # wavvyboi
+      - "3HY022EuyZPU1hwRQG592k" # Jan Böhmermann
+      - "3wrFoI9EVjWg6m8xXeWr5t" # VALORANT
+      - "2gMbpV2SlFoyU2UZgjOQaK" # shyaa
+      - "7pwufEBGfggjoI8twqlsmQ" # Nessa Barrett

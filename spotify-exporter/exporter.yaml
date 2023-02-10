@@ -40,6 +40,13 @@ spec:
             readOnlyRootFilesystem: true
             runAsNonRoot: true
             allowPrivilegeEscalation: false
+          volumeMounts:
+            - mountPath: /etc/spotify-exporter
+              name: config
+      volumes:
+        - name: config
+          configMap:
+            name: spotify-exporter
 ---
 apiVersion: v1
 kind: Service
