@@ -27,7 +27,7 @@ spec:
       dnsPolicy: Default
       containers:
         - name: spotify-exporter
-          image: ghcr.io/nycodeghg/spotify-exporter
+          image: ghcr.io/nycodeghg/spotify-exporter:0.2.0
           ports:
             - containerPort: 3000
               name: metrics
