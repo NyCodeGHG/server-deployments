@@ -4,7 +4,7 @@ global:
 image:
   registry: "docker.io"
   repository: "gitea/gitea"
-  tag: "1.18.2"
+  tag: "1.18.4"
   rootless: true
 
 ingress:
