@@ -12,5 +12,6 @@
       "^_infrastructure/argo-tunnel",
       "^_infrastructure/imagepullsecret-patcher"
     ]
-  }
+  },
+  "ignorePaths": ["_archived/**"]
 }
