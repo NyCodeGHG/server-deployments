@@ -8,7 +8,7 @@ resources:
 helmCharts:
   - name: miniflux
     releaseName: miniflux
-    version: 0.2.2
+    version: 0.2.3
     repo: https://charts.nycode.dev/
     namespace: miniflux
     valuesFile: values.yaml
