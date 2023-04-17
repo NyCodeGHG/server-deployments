@@ -17,4 +17,3 @@ resources:
   - "spotify-exporter.yaml"
   - "miniflux.yaml"
   - "traefik.yaml"
-  - "longhorn.yaml"
