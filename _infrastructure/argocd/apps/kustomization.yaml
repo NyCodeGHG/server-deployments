@@ -12,7 +12,6 @@ resources:
   - "whoami.yaml"
   - "grafana.yaml"
   - "prometheus.yaml"
-  - "genius-service.yaml"
   - "argo-tunnel.yaml"
   - "traewelling-exporter.yaml"
   - "spotify-exporter.yaml"
