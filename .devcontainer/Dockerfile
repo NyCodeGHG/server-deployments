@@ -1,5 +1,5 @@
 # Note: You can use any Debian/Ubuntu based image you want. 
-FROM mcr.microsoft.com/vscode/devcontainers/base:0-bullseye@sha256:bfe8d51626b9f6536f001261355b4c894df26cd9a739940d5a303d62b846595a
+FROM mcr.microsoft.com/vscode/devcontainers/base:0-bullseye@sha256:5c43155f088a7da3486b894d24b38a4dacd0c028367743ce61746b7642e8143a
 
 # Enable new "BUILDKIT" mode for Docker CLI
 ENV DOCKER_BUILDKIT=1
