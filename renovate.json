@@ -13,5 +13,6 @@
       "^_infrastructure/imagepullsecret-patcher"
     ]
   },
-  "ignorePaths": ["_archived/**"]
+  "ignorePaths": ["_archived/**"],
+  "enabled": false
 }
